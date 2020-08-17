@@ -25,13 +25,14 @@ const navSlide = () => {
     });
 }
 
+// navLinks.addEventListener ('click' , )
+
+
 navSlide();
 
 // FILTER
 const filterWorks = document.querySelectorAll('.work');
 const filterElem = document.querySelectorAll('.works__filter li');
-
-console.log(filterElem);
 
 document.querySelector('.works__filter').addEventListener('click', event => {
     if (event.target.tagName !== 'LI') return false;
@@ -84,6 +85,10 @@ works.onmouseout = function(event) {
   currentElem.classList.toggle('active');
   currentElem = null;
 };
+
+
+
+
 
 
 // Animate #banner__title

@@ -1,3 +1,6 @@
+html {
+    scroll-behavior: smooth;
+}
 body {
     margin: 0;
     padding: 0;
@@ -218,9 +221,12 @@ img {
 }
 .nav-link a {
     text-decoration: none;
-    color: #fff;
+    color: #ffffff;
     font-family: 'Cutive Mono', monospace;
     font-size: 90px;
+}
+.nav-link a:hover {
+    color: #000000;
 }
 @media screen and (max-width: 768px) {
     .nav-link a {
@@ -230,13 +236,16 @@ img {
 .nav-list li {
     opacity: 0;
 }
-.nav-link a:hover {
-    opacity: 0.5;
-}
 .socials .nav-link {
     width: 45px;
     height: auto;
     padding: 7px;
+}
+.socials .nav-link a {
+    opacity: 0.8;
+}
+.socials .nav-link a:hover {
+    opacity: 1;
 }
 @keyframes navLinkFade {
     from {
@@ -280,7 +289,7 @@ img {
     position: absolute;
     width: 4px;
     height: 650px;
-    background: #000;
+    background: #000000;
     margin: 65px 0 0 45px;
 }
 @media screen and (max-width: 768px) {
@@ -397,7 +406,7 @@ img {
     height: 4px;
     bottom: 8px;
     left: 0;
-    background-color: #cdee4a;
+    background-color: #ccef4a;
     /* -webkit-transition: all 0.3s ease-in-out 0s; */
     transition: line 4s linear forwards;
 }
@@ -422,7 +431,7 @@ img {
 @media screen and (max-width: 768px) {
     .email {
         display: block;
-        border: 1px solid #cdee4a;
+        border: 1px solid #ccef4a;
     }
 }
 .email__rotate {
@@ -442,11 +451,11 @@ img {
 .email__rotate a:hover::before {
     content: "";
     position: absolute;
-    width: 4px;
-    height: 100%;
-    top: 0;
-    right: 118px;
-    background-color: #cdee4a;
+    width: 100%;
+    height: 4px;
+    top: 405%;
+    right: 0%;
+    background-color: #ccef4a;
     /* visibility: hidden;
     -webkit-transform: scaleY(0);
     transform: scaleY(0);
@@ -515,7 +524,7 @@ img {
     height: 4px;
     bottom: 8px;
     left: 0;
-    background-color: #cdee4a;
+    background-color: #ccef4a;
 
 }
 .works__filter li:hover::after {
@@ -525,7 +534,7 @@ img {
     height: 4px;
     bottom: 8px;
     left: 0;
-    background-color: #cdee4a;
+    background-color: #ccef4a;
     /* visibility: hidden; */
     /* -webkit-transform: scaleX(0);
     transform: scaleX(0);
@@ -602,7 +611,7 @@ img {
     justify-content: space-between;
     padding-top: 30px;
     padding-bottom: 70px;
-    border-top: 3px solid #000;
+    border-top: 3px solid #000000;
 }
 @media screen and (max-width: 768px) {
     .footer {
@@ -649,6 +658,9 @@ img {
 .footer__menu li a {
     text-decoration: none;
     color: #000000;
+}
+.footer__menu li a:hover {
+    color: #ccef4a;
 }
 .copyright {
     color: #ccc;
