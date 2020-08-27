@@ -48,7 +48,6 @@ document.querySelector('.works__filter').addEventListener('click', event => {
 
     filterWorks.forEach(elem => {
         elem.classList.remove('hide');
-        // event.target.classList.add('active');
         if (!elem.classList.contains(filterClass) && filterClass !== 'all') {
             elem.classList.add('hide');
         }
