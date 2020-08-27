@@ -2,14 +2,15 @@
 
 console.log('Hey! If you see this site throught the console you are a programmer or very inquisitive person. Nice to meet you here :)');
 
+
+const burger = document.querySelector('.burger-menu');
+const nav = document.querySelector('.nav-menu');
+const navLinks = document.querySelectorAll('.nav-list li');
+
 // OPEN Navbar menu
 const navSlide = () => {
-    const burger = document.querySelector('.burger-menu');
-    const nav = document.querySelector('.nav-menu');
-    const navLinks = document.querySelectorAll('.nav-list li');
-
     // Toggle Nav
-    burger.addEventListener ('click' , () => {
+    burger.addEventListener ('click' , (event) => {       
         nav.classList.toggle('nav-active');
 
         // Animate Links
@@ -25,8 +26,13 @@ const navSlide = () => {
     });
 }
 
-// navLinks.addEventListener ('click' , )
 
+for (let link of navLinks) {
+    link.addEventListener('click', () => {
+        nav.classList.toggle('nav-active');
+        burger.classList.toggle('toggle');
+    });
+};
 
 navSlide();
 
@@ -42,16 +48,25 @@ document.querySelector('.works__filter').addEventListener('click', event => {
 
     filterWorks.forEach(elem => {
         elem.classList.remove('hide');
-        event.target.classList.add('active');
+        // event.target.classList.add('active');
         if (!elem.classList.contains(filterClass) && filterClass !== 'all') {
             elem.classList.add('hide');
         }
     });
 });
 
+// Take current filter link
+for (let elem of filterElem) {
+    elem.addEventListener('click', () => {
+        for (let item of filterElem) {
+            item.classList.remove('active');
+        }
+        elem.classList.add('active');
+    })
+}
+
 
 // ONMOUSEOVER works
-// ячейка <td> под курсором в данный момент (если есть)
 let currentElem = null;
 const works = document.querySelector('.works__list'),
       currentWork = document.querySelectorAll('.work__description');
@@ -70,7 +85,6 @@ works.onmouseover = function(event) {
 }
 };
 
-
 works.onmouseout = function(event) {
   if (!currentElem) return;
   let relatedTarget = event.relatedTarget;
@@ -87,10 +101,7 @@ works.onmouseout = function(event) {
 };
 
 
-
-
-
-
+//JUST for counting numbers in baners's title
 // Animate #banner__title
 // const bannerTitle = document.querySelectorAll("#banner__title path");
 
@@ -102,22 +113,121 @@ works.onmouseout = function(event) {
 
 
 // Observe the scrolling
-// const header = document.querySelector("header");
-// const sectionOne = document.querySelector(".home-intro");
+const logoBox = document.querySelector(".logo-box");
+const sectionOne = document.querySelector(".banner");
+// Observe the scrolling blocks
+const faders = document.querySelectorAll(".fade-in");
+const sliders = document.querySelectorAll(".slide-in");
 
-// const sectionOneOptions = {
-//     rootMargin: "-200px 0px 0px 0px"
-// };
+const sectionOneOptions = {
+    rootMargin: "-400px 0px 0px 0px"
+};
 
-// const sectionOneObserver = new IntersectionObserver (function(entries, sectionOneObserver)) {
-//     entries.forEach(entry => {
-//         if (!entry.isIntersecting) {
-//             header.classList.add("nav-scrolled");
-//         } else {
-//             header.classList.remove("nav-scrolled");
-//         }
-//     });
-// },
-// sectionOneOptions);
+const sectionOneObserver = new IntersectionObserver (function(
+    entries, sectionOneObserver
+    ) {
+    entries.forEach(entry => {
+        if (!entry.isIntersecting) {
+            logoBox.classList.add("scrolled");
+            document.body.style.backgroundColor = "white";
+        } else {
+            logoBox.classList.remove("scrolled");
+            document.body.style.backgroundColor = "#ccef4a";
+        }
+    })
+},
+sectionOneOptions);
+sectionOneObserver.observe(sectionOne);
 
-// sectionOneObserver.observe(sectionOne);
+
+// Observe the scrolling blocks
+const appearOptions = {
+    threshold: 0,
+    rootMargin: "0px 0px -250px 0px"
+};
+
+const appearOnScroll = new IntersectionObserver(function(
+    entries,
+    appearOnScroll
+) {
+    entries.forEach(entry => {
+        if (!entry.isIntersecting) {
+            return;
+        } else {
+            entry.target.classList.add("appear");
+            appearOnScroll.unobserve(entry.target);
+        }
+    });
+},
+appearOptions);
+
+
+faders.forEach(fader => {
+    appearOnScroll.observe(fader);
+});
+
+sliders.forEach(slider => {
+    appearOnScroll.observe(slider);
+});
+
+
+// smooth Scrolling
+// function smoothScroll(target, duration) {
+//     var target = document.querySelector(target);
+//     var targetPosition = target.getBoundingClientRect().top;
+//     var startPosition = window.pageYOffset;
+//     var distance = targetPosition - startPosition;
+//     var startTime = null;
+// }
+
+// function animation(currentTime) {
+//     if (startTime === null) startTime = currentTime;
+//     console.log(startTime);
+//     var timeElapsed = currentTime - startTime;
+//     var run = ease(timeElapsed, startPosition, distance, duration);
+//     window.scrollTo(0,run);
+//     if (timeElapsed < duration) requestAnimationFrame(animation);
+// }
+
+// function ease (t, b, c, d) {
+//     t /= d / 2;
+//     if (t < 1) return c / 2 * t * + b;
+//     t--;
+//     return -c / 2 * (t * (t - 2) - 1) + b;
+
+
+
+//     requestAnimationFrame(animation);
+// }
+
+
+// var section1 = document.querySelector('.section1');
+// var section2 = document.querySelector('.section2');
+
+
+// section1.addEventListener('click', function(){
+//     smoothScroll('.section2', 1000)
+// });
+
+// section2.addEventListener('click', function(){
+//     smoothScroll('.section1', 1000)
+// });
+
+
+
+const anchors = document.querySelectorAll('a[href*="#"]');
+
+for (let anchor of anchors) {
+    anchor.addEventListener('click', function(eventScroll) {
+        eventScroll.preventDefault();
+
+        const blockId = anchor.getAttribute('href').substr(1);
+
+
+        document.getElementById(blockId).scrollIntoView({
+            behavior: 'smooth',
+            block: 'start',
+        })
+
+    })
+}

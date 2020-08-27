@@ -129,7 +129,7 @@
             </svg>               
             <!-- <p>Always learning & always up for a challenge</p> -->
             <div class="about-link">
-                <a href="#info">about me</a>
+                <a class="section1" href="#info">about me</a>
                 <div class="vert-line">
                     <div class="cross-point">
                         <span class="cross-1"></span>
@@ -141,10 +141,10 @@
     </header>
     <main>
         <section id="info" class="about container">
-            <div class="about-title">
+            <div class="about-title fade-in">
                 <h2>My skills:</h2>
             </div>
-            <div class="skills__box">
+            <div class="skills__box fade-in">
                 <div class="skills">
                     <p class="skill-items">Languages I speak:
                         HTML, CSS, JavaScript, Gulp, Sass
@@ -153,7 +153,7 @@
                         VS Code, Bootstrap, Codepen, Github, Terminal, npm
                     </p>
                     <div class="see-work">
-                        <a href="#works">see work</a>
+                        <a class="section2" href="#works">see work</a>
                     </div>
                 </div>
             </div>
@@ -168,10 +168,10 @@
             </div>
         </section>
         <section id="works" class="works container">
-            <div class="works-title">
+            <div class="works-title slide-in from-left">
                 <h3>Some work</h3>
             </div>
-            <div class="filter">
+            <div class="filter slide-in from-left">
                 <ul class="works__filter">
                     <li data-filter="all">all</li>
                     <li data-filter="web">web</li>
@@ -179,56 +179,91 @@
                     <li data-filter="apps">apps</li>
                 </ul>
             </div>
-            <div class="works__box">
+            <div class="works__box slide-in from-right">
                 <ul class="works__list">
                     <li class="work live">
                         <a href="http://bymarusya.ru/" target="_blank">
                             <img src="img/bymarusya_ru.jpg" alt="bymarusya.ru">
-                            <div class="work__description">1</div>
+                            <div class="work__description">
+                                <h4 class="work-title">Swim&beach wear</h4>
+                                <p class="work-tools">
+                                    CMS: Wordpress, a simple multipage site.
+                                </p>
+                            </div>
                         </a>
                     </li>
                     <li class="work live">
                         <a href="http://unica.glassfurnitura.ru/" target="_blank">
                             <img src="img/unica_glassfurnitura_ru.jpg" alt="unica.glassfurnitura.ru">
-                            <div class="work__description">2</div>
-                        </a>
-                    </li>
-                    <!-- <li class="work web">
-                        <a href="#">
-                            <img src="img/3.gif" alt="">
-                            <div class="work__description">3</div>
+                            <div class="work__description">
+                                <h4 class="work-title">Hardware for doors</h4>
+                                <p class="work-tools">
+                                    CMS: Wordpress, landing page.
+                                </p>
+                            </div>
                         </a>
                     </li>
                     <li class="work apps">
                         <a href="#">
-                            <img src="img/4.jpg" alt="">
-                            <div class="work__description">4</div>
+                            <img src="img/ipoteka-calculator.png" alt="">
+                            <div class="work__description">
+                                <h4 class="work-title">Credit calculator</h4>
+                                <p class="work-tools">
+                                    App: Vanilla JS.
+                                </p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="work apps">
+                        <a href="#">
+                            <img src="img/weather-app.gif" alt="">
+                            <div class="work__description">
+                                <h4 class="work-title">The Weather App</h4>
+                                <p class="work-tools">
+                                    Used: Vanilla JS, API.
+                                </p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="work apps">
+                        <a href="#">
+                            <img src="img/todo-app.png" alt="">
+                            <div class="work__description">
+                                <h4 class="work-title">To Do List</h4>
+                                <p class="work-tools">
+                                    Used: Vanilla JS.
+                                </p>
+                            </div>
                         </a>
                     </li>
                     <li class="work web">
                         <a href="#">
-                            <img src="img/5.gif" alt="">
-                            <div class="work__description">5</div>
+                            <img src="img/la-serre-io.gif" alt="">
+                            <div class="work__description">
+                                <h4 class="work-title">Landing page</h4>
+                                <p class="work-tools">
+                                    Features: CSS Animation, slider by vertical scrolling.
+                                </p>
+                            </div>
                         </a>
                     </li>
-                    <li class="work live">
+                    <li class="work apps">
                         <a href="#">
-                            <img src="img/6.jpg" alt="">
+                            <img src="img/money-course.png" alt="">
                             <div class="work__description">6</div>
                         </a>
                     </li>
                     <li class="work web">
                         <a href="#">
-                            <img src="img/7.jpg" alt="">
-                            <div class="work__description">7</div>
+                            <img src="img/deplacemaison-com.jpg" alt="">
+                            <div class="work__description">
+                                <h4 class="work-title">Shoes shop</h4>
+                                <p class="work-tools">
+                                    Features: Vanilla JS Carousel with dropping, add products to card.
+                                </p>
+                            </div>
                         </a>
                     </li>
-                    <li class="work apps">
-                        <a href="#">
-                            <img src="img/8.jpg" alt="">
-                            <div class="work__description">8</div>
-                        </a>
-                    </li> -->
                 </ul>
             </div>
         </section>
@@ -251,7 +286,9 @@
                     </a>
                 </li>
             </ul>
-            <span class="copyright">all copyright 2020</span>
+            <!-- <span class="copyright">all copyright 2020</span> -->
+            <br>
+            <span class="copyright">design insired by christiafung.com</span>
         </div>
     </footer>
 
